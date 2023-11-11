@@ -4,12 +4,10 @@
         <meta charset="ISO-8859-1">
         <link rel="stylesheet" href="css/show_chat_style.css">
         <?php session_start(); ?>
+        <meta http-equiv="refresh" content="5">
     </head>
 
     <body>
-
-        
-
         <?php
             require_once("variabili_conn.php");
             $idUser = $_SESSION['idUser'];
@@ -22,13 +20,15 @@
                 {
                     $idMit = $row['idUser'];
                     $mess  = $row['messaggio'];
-                    $data  = $row['dataIns'];
+                    $data  = substr($row['dataIns'], 0, 10);
+                    $ora   = substr($row['dataIns'], 11);
+                    $data  = date("d-m-Y", strtotime($row['dataIns']));
                     if($idMit == $idUser)
                         echo "<div class='mit_to_dest'>";
                     else
                         echo "<div class='dest_to_mit'>";
                     echo "<p class='message'>$mess</p>";
-                    echo "<span class='data'>$data</p>";
+                    echo "<span class='data'>Messaggio scritto in data $data alle ore $ora</p>";
                     echo "</div>";
                 }
             }

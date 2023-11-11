@@ -3,6 +3,7 @@
         <link rel="stylesheet" href="css/chat_list_style.css">
         <meta charset="ISO-8859-1">
         <?php session_start(); ?>
+        <meta http-equiv="refresh" content="5">
     </head>
 
     <body>
@@ -61,9 +62,19 @@
                             mysqli_close($con);
                         ?>
                     </select>
-                    <a href="show_chat.php">
-                        <button id="new_chat_btn">Open New Chat</button>
+                    <a id="link_new_chat">
+                        <button id="new_chat_btn" onclick="getIdDest()">Open New Chat</button>
                     </a>
+
+                    <script>
+                        function getIdDest()
+                        {
+                            usersList   = document.getElementById("users_list");
+                            idDest      = usersList.value;
+                            linkNewChat = document.getElementById("link_new_chat");
+                            linkNewChat.href = "show_chat.php?idDest="+idDest;
+                        }
+                    </script>
                 </div>
             </div>
         </div>
