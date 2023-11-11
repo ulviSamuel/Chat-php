@@ -32,7 +32,7 @@ body
     padding-left: 2%;
     padding-right: 2%;
     border-width: 4px;
-    border-color: #9400FF;
+    border-color: #0078D7;
 }
 
 #login_form input:focus
@@ -42,7 +42,7 @@ body
 
 #login_btn
 {
-    background-color: #9400FF;
+    background-color: #0078D7;
     color: white;
     border: none;
     outline: none;
@@ -57,6 +57,6 @@ body
 
 #no_log_text
 {
-    color: #a71313;
+    color: red;
     text-align: center;
 }
