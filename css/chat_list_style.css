@@ -111,6 +111,14 @@ body
     border-radius: 10px;
 }
 
+#btn_and_selector
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
 #users_list
 {
     width: 80%;
@@ -131,5 +139,18 @@ body
 
 #new_chat_btn
 {
-    
+    font-family: inherit;
+    margin-top: 20%;
+    background-color: #0078D7;
+    color: white;
+    border: none;
+    outline: none;
+    transition: transform 0.3s;
+    border-radius: 10px;
+    height: 100%;
+}
+
+#new_chat_btn:hover
+{
+    transform: scale(0.95);
 }

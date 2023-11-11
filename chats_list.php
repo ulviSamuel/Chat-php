@@ -43,25 +43,28 @@
 
             <div id="new_chat_container">
                 <h1 id="title_new_chat">New Chat</h1>
-                <select name="users" size="1" id="users_list">
-                    <?php
-                        $sql = "SELECT tl.id, tl.username FROM tlogin tl WHERE tl.id != $idUser ORDER BY username ASC";
-                        $res = mysqli_query($con, $sql);
-                        if(mysqli_num_rows($res) > 0)
-                        {
-                            while($row = mysqli_fetch_assoc($res))
+                
+                <div id="btn_and_selector">
+                    <select name="users" size="1" id="users_list">
+                        <?php
+                            $sql = "SELECT DISTINCT tl.username, tl.id FROM tlogin tl WHERE tl.id NOT IN ( SELECT DISTINCT tm.idUser FROM tmessaggi tm WHERE tm.idDest = 6 UNION SELECT DISTINCT tm.idDest FROM tmessaggi tm WHERE tm.idUser = $idUser ) AND tl.id != $idUser ORDER BY tl.username;";
+                            $res = mysqli_query($con, $sql);
+                            if(mysqli_num_rows($res) > 0)
                             {
-                                $idDest        = $row['id'];
-                                $usernameDest  = $row['username'];
-                                echo "<option value='$idDest'>$usernameDest</option>";
+                                while($row = mysqli_fetch_assoc($res))
+                                {
+                                    $idDest        = $row['id'];
+                                    $usernameDest  = $row['username'];
+                                    echo "<option value='$idDest'>$usernameDest</option>";
+                                }
                             }
-                        }
-                        mysqli_close($con);
-                    ?>
-                </select>
-                <a href="chat.php">
-                    <button id="new_chat_btn">Open New Chat</button>
-                </a>
+                            mysqli_close($con);
+                        ?>
+                    </select>
+                    <a href="show_chat.php">
+                        <button id="new_chat_btn">Open New Chat</button>
+                    </a>
+                </div>
             </div>
         </div>
     </body>
