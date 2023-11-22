@@ -1,13 +1,21 @@
 <html>
 
     <head>
-        <meta charset="ISO-8859-1">
+        <meta charset="utf-8">
         <link rel="stylesheet" href="css/show_chat_style.css">
         <?php session_start(); ?>
-        <meta http-equiv="refresh" content="60">
+        <!--<meta http-equiv="refresh" content="60">-->
     </head>
 
     <body>
+        <a href="chats_list.php">
+            <img id="back_icon" src="img/icons8-back-50.png" alt="Back Icon">
+        </a>
+
+        <img id="profile" src="img/blank-profile-picture-973460_640.png" alt="Profile">
+
+        <p id="space_start"></p>
+
         <?php
             require_once("variabili_conn.php");
             $idUser = $_SESSION['idUser'];
@@ -46,7 +54,7 @@
             echo "<script>idDest = $idDest;</script>";
         ?>
 
-        <p id="space"></p>
+        <p id="space_end"></p>
 
         <div id="mess_send_container">
             <textarea id="message_area"></textarea>

@@ -5,6 +5,25 @@ body
     background-color: black;
 }
 
+#back_icon
+{
+    position: fixed;
+    top: 2%;
+}
+
+#space_start
+{
+    height: 8%;
+}
+
+#profile
+{
+    height: 8%;
+    width: auto;
+    border-radius: 15%;
+    margin-left: 10%;
+}
+
 #mess_send_container
 {
     position: fixed;
@@ -77,7 +96,7 @@ body
     margin-right: 200%;
 }
 
-#space
+#space_end
 {
     height: 15%;
 }
