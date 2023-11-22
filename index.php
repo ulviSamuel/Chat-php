@@ -1,7 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/index_style.css">
-        <meta charset="ISO-8859-1">
+        <meta charset="utf-8">
         <?php session_start(); ?>
     </head>
 
@@ -22,7 +22,7 @@
                 if(isset($_POST['password']))
                 {
                     $password = $_POST['password'];
-                    $con = mysqli_connect("localhost", "root", "", "chat");
+                    $con = mysqli_connect("localhost", "root", "", "chat5f");
                     $sql = "SELECT * FROM tLogin tl WHERE tl.username = '$username' AND tl.password = '$password'";
                     $res = mysqli_query($con, $sql);
                     if(mysqli_num_rows($res) == 1)

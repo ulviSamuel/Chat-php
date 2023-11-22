@@ -1,9 +1,9 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/chat_list_style.css">
-        <meta charset="ISO-8859-1">
+        <meta charset="utf-8">
         <?php session_start(); ?>
-        <meta http-equiv="refresh" content="5">
+        <meta http-equiv="refresh" content="60">
     </head>
 
     <body>
