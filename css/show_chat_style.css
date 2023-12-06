@@ -5,21 +5,23 @@ body
     background-color: black;
 }
 
-#back_icon
+header
 {
+    height: 10%;
     position: fixed;
     top: 2%;
+    display: flex;
+    align-items: center;
 }
 
 #space_start
 {
-    height: 8%;
+    height: 10%;
 }
 
 #profile
 {
-    height: 8%;
-    width: auto;
+    height: 90%;
     border-radius: 15%;
     margin-left: 10%;
 }

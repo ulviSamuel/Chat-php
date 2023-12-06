@@ -8,18 +8,24 @@
     </head>
 
     <body>
-        <a href="chats_list.php">
-            <img id="back_icon" src="img/icons8-back-50.png" alt="Back Icon">
-        </a>
-
-        <img id="profile" src="img/blank-profile-picture-973460_640.png" alt="Profile">
+        <header>
+            <a href="chats_list.php">
+                <img id="back_icon" src="img/icons8-back-50.png" alt="Back Icon">
+            </a>
+            <img id="profile" src="img/blank-profile-picture-973460_640.png" alt="Profile">
+            <?php
+                require_once("variabili_conn.php");
+                $idUser = $_SESSION['idUser'];
+                $idDest = $_GET['idDest'];
+                $sql = "SELECT username FROM tlogin tl WHERE tl.id = $idDest";
+                $res = mysqli_query($con, $sql);
+                //echo mysqli_fetch_assoc($res)
+            ?>
+        </header>
 
         <p id="space_start"></p>
 
         <?php
-            require_once("variabili_conn.php");
-            $idUser = $_SESSION['idUser'];
-            $idDest = $_GET['idDest'];
             if(isset($_POST['message']))
             {
                 $mess = $_POST['message'];
