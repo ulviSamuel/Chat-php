@@ -7,11 +7,26 @@ body
 
 header
 {
+    width: 100%;
     height: 10%;
+    padding-bottom: 2%;
     position: fixed;
-    top: 2%;
     display: flex;
     align-items: center;
+    background-color: #000000c9;
+}
+
+#back_link
+{
+    margin-top: 2%;
+}
+
+#nome_dest
+{
+    margin-top: 2%;
+    color: white;
+    margin-left: 2%;
+    font-size: 200%;
 }
 
 #space_start
@@ -21,9 +36,10 @@ header
 
 #profile
 {
+    margin-top: 2%;
     height: 90%;
     border-radius: 15%;
-    margin-left: 10%;
+    margin-left: 2%;
 }
 
 #mess_send_container
@@ -61,20 +77,6 @@ header
 .mit_to_dest
 {
     font-family: inherit;
-    background-color: #004d8b;
-    padding-left: 1%;
-    padding-right: 1%;
-    padding-top: 0.1%;
-    padding-bottom: 0.1%;
-    border-radius: 10px;
-    margin-top: 3%;
-    width: 50%;
-    margin-left: 3%;
-}
-
-.dest_to_mit
-{
-    font-family: inherit;
     background-color: #0078D7;
     padding-left: 1%;
     padding-right: 1%;
@@ -84,6 +86,20 @@ header
     margin-top: 3%;
     margin-left: 50%;
     margin-right: 3%;
+}
+
+.dest_to_mit
+{
+    font-family: inherit;
+    background-color: #004d8b;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 0.1%;
+    padding-bottom: 0.1%;
+    border-radius: 10px;
+    margin-top: 3%;
+    width: 50%;
+    margin-left: 3%;
 }
 
 .message
