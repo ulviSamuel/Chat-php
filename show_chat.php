@@ -81,7 +81,7 @@
             function setForm()
             {
                 mess = document.getElementById("message_area").value;
-                if(sizeof(mess) != 0)
+                if(mess.length != 0)
                 {
                     form = document.getElementById("new_mess_form");
                     form.elements["message"].value = mess;
@@ -89,6 +89,13 @@
                     form.submit();
                 }
             }
+        </script>
+
+        <script>
+            window.onload = function ()
+             {
+                window.scrollTo(0, document.body.scrollHeight);
+            };
         </script>
     </body>
 
